@@ -4,11 +4,11 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 
-export default function ButtonAppBar() {
-  function handleThemeChange() {
-    // Lógica para alternar o tema
-  }
+type Props = {
+  handleThemeChange: () => void;
+};
 
+export default function ButtonAppBar({handleThemeChange}: Props) {
   return (
     <AppBar 
         position="static" 
@@ -21,7 +21,7 @@ export default function ButtonAppBar() {
             <Typography variant="h6" sx={{ flexGrow: 1 }}>
               GrowAvalia
             </Typography>
-            <IconButton onClick={() => { handleThemeChange() }}>
+            <IconButton onClick={handleThemeChange}>
               <Brightness4Icon sx={{ color: 'inherit' }} />
             </IconButton>
         </Toolbar>
