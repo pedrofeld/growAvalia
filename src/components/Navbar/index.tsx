@@ -11,20 +11,20 @@ type Props = {
 export default function ButtonAppBar({handleThemeChange}: Props) {
   return (
     <AppBar 
-        position="static" 
-        sx={{
-            backgroundColor: "primary"
-        }}
+      position="static" 
+      sx={{
+        backgroundColor: "primary"
+      }}
     >
-        <CssBaseline />
-        <Toolbar>
-            <Typography variant="h6" sx={{ flexGrow: 1 }}>
-              GrowAvalia
-            </Typography>
-            <IconButton onClick={handleThemeChange}>
-              <Brightness4Icon sx={{ color: 'inherit' }} />
-            </IconButton>
-        </Toolbar>
+    <CssBaseline />
+    <Toolbar>
+      <Typography variant="h6" sx={{ flexGrow: 1 }}>
+        GrowAvalia
+      </Typography>
+      <IconButton onClick={handleThemeChange}>
+        <Brightness4Icon sx={{ color: 'inherit' }} />
+      </IconButton>
+    </Toolbar>
     </AppBar>
   );
 }
