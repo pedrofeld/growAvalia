@@ -1,0 +1,13 @@
+import { combineReducers } from '@reduxjs/toolkit';
+import storage from 'redux-persist/lib/storage';
+import { persistReducer } from 'redux-persist';
+import themeReducer from './slices/themeSlice';
+
+const rootReducer = combineReducers({
+    theme: themeReducer
+});
+
+export const persistedReducer = persistReducer({
+    key: 'login',
+    storage
+}, rootReducer);
