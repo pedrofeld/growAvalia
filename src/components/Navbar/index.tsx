@@ -1,9 +1,14 @@
-import { CssBaseline } from '@mui/material';
+import { IconButton, CssBaseline } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
 
 export default function ButtonAppBar() {
+  function handleThemeChange() {
+    // Lógica para alternar o tema
+  }
+
   return (
     <AppBar 
         position="static" 
@@ -13,9 +18,12 @@ export default function ButtonAppBar() {
     >
         <CssBaseline />
         <Toolbar>
-            <Typography variant="h6" component="div">
-            GrowAvalia
+            <Typography variant="h6" sx={{ flexGrow: 1 }}>
+              GrowAvalia
             </Typography>
+            <IconButton onClick={() => { handleThemeChange() }}>
+              <Brightness4Icon sx={{ color: 'inherit' }} />
+            </IconButton>
         </Toolbar>
     </AppBar>
   );
