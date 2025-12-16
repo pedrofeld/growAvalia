@@ -1,12 +1,14 @@
 import { Box, Button, TextField, ThemeProvider, Typography } from '@mui/material';
 import ButtonAppBar from './components/Navbar';
-// import { darkTheme } from './themes/dark';
-import { lightTheme } from './themes/light';
+import { darkTheme } from './themes/dark';
+// import { lightTheme } from './themes/light';
+import {Provider as ReduxProvider} from 'react-redux';
+import { store } from './store';
 
 function App() {
   return (
-    <>
-      <ThemeProvider theme={lightTheme}> {/*Possível trocar para darkTheme*/}
+    <ReduxProvider store={store}>
+      <ThemeProvider theme={darkTheme}> {/*Possível trocar para lightTheme*/}
         <ButtonAppBar />
           <Box sx={{paddingLeft: 2}}>
             <Typography variant='h6' sx={{flexGrow: 1, marginTop: 2}}>
@@ -51,7 +53,7 @@ function App() {
             </form>        
           </Box>
       </ThemeProvider>
-    </>
+    </ReduxProvider>
   )
 }
 
